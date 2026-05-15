@@ -1,0 +1,17 @@
+### GET all contacts
+GET http://localhost:8080/contacts
+
+### GET contact by ID
+GET http://localhost:8080/contacts/69fce6327d67700d3380d8b3
+
+### CREATE contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Laura",
+  "lastName": "Hernandez",
+  "email": "laura@example.com",
+  "favoriteColor": "Pink",
+  "birthday": "2001-04-12"
+}
