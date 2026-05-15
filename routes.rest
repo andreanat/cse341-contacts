@@ -15,3 +15,14 @@ Content-Type: application/json
   "favoriteColor": "Pink",
   "birthday": "2001-04-12"
 }
+### UPDATE contact
+PUT http://localhost:8080/contacts/6a07ad2f4da9d81056a1d881
+Content-Type: application/json
+
+{
+  "firstName": "Laura Updated",
+  "lastName": "Hernandez",
+  "email": "lauraupdated@example.com",
+  "favoriteColor": "Black",
+  "birthday": "2001-04-12"
+}
