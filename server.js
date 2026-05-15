@@ -3,6 +3,7 @@ const express = require("express");
 const mongodb = require("./data/database");
 
 const app = express();
+app.use(express.json());
 app.use("/contacts", contactsRoutes);
 const port = 8080;
 
