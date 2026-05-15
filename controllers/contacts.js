@@ -73,8 +73,24 @@ const updateContact = async (req, res) => {
     res.status(500).json(response.error || "Some error occurred.");
   }
 };
+const deleteContact = async (req, res) => {
+  const contactId = new ObjectId(req.params.id);
+
+  const response = await mongodb
+    .getDb()
+    .db("cse341")
+    .collection("contacts")
+    .deleteOne({ _id: contactId });
+
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || "Some error occurred.");
+  }
+};
 
 module.exports = {
+  deleteContact,
   updateContact,
   getAll,
   getSingle,

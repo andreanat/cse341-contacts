@@ -1,11 +1,15 @@
 const contactsRoutes = require("./routes/contacts");
 const express = require("express");
 const mongodb = require("./data/database");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
 
 const app = express();
 app.use(express.json());
 app.use("/contacts", contactsRoutes);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 const port = 8080;
+
 
 mongodb.initDb((err) => {
   if (err) {

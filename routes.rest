@@ -18,6 +18,8 @@ Content-Type: application/json
 ### UPDATE contact
 PUT http://localhost:8080/contacts/6a07ad2f4da9d81056a1d881
 Content-Type: application/json
+### DELETE contact
+DELETE http://localhost:8080/contacts/6a07ae717661a6670656c75c
 
 {
   "firstName": "Laura Updated",
